@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@layer utilities {
+  .hud-grid-bg {
+    background-image: 
+      linear-gradient(to right, #e2e2e2 1px, transparent 1px),
+      linear-gradient(to bottom, #e2e2e2 1px, transparent 1px);
+    background-size: 4rem 4rem;
+  }
+
+  .tech-glow {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  .tech-glow:hover {
+    box-shadow: 0 0 15px #d4d4d4;
+    background-color: #f0f0f0;
+  }
+
+  .btn-brutalist {
+    transition: all 0.2s ease;
+  }
+  .btn-brutalist:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-left: 1px solid #000000;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #000000;
+  }
+}

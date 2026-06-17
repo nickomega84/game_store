@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend_store
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend_store:/app
+    environment:
+      - RAILS_ENV=development
+
+  frontend:
+    build: 
+      context: ./frontend_store
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend_store:/app
+      # Este volumen anónimo evita que nuestra carpeta local node_modules sobrescriba la del contenedor
+      - /app/node_modules
+    environment:
+      # Fuerza a Vite a recargar cuando cambias el código desde fuera del contenedor
+      - CHOKIDAR_USEPOLLING=true
